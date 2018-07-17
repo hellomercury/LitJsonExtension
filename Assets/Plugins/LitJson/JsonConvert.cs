@@ -5,7 +5,7 @@ namespace LitJson
 {
     public static class JsonConvert
     {
-        public static string SerializeObject(this Dictionary<string, int> InDictionary)
+        public static string ToJsonString(this Dictionary<string, int> InDictionary)
         {
             if (null == InDictionary) return string.Empty;
             else
@@ -28,5 +28,16 @@ namespace LitJson
                 return sb.ToString();
             }
         }
+
+        public static Dictionary<string, int> ToObject(this JsonData InJsonData)
+        {
+            return null;
+        }
+        public static Dictionary<string, int> ToObject(this string InJsonStr)
+        {
+            return null;
+        } 
     }
+
+
 }
