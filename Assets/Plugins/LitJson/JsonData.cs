@@ -73,6 +73,11 @@ namespace LitJson
         public ICollection<string> Keys {
             get { EnsureDictionary (); return inst_object.Keys; }
         }
+
+        public IList<KeyValuePair<string, JsonData>> ObjectList
+        {
+            get { return object_list; }
+        }
         #endregion
 
 
@@ -909,7 +914,7 @@ namespace LitJson
 
             StringWriter sw = new StringWriter ();
             JsonWriter writer = new JsonWriter (sw);
-            writer.Validate = false;
+            writer.Validate = true;
 
             WriteJson (this, writer);
             json = sw.ToString ();
